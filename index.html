@@ -1,259 +1,207 @@
-<title>Бразильский фонк — схема нот для GarageBand</title>
+<title>Бразильский фонк — что куда вставлять в GarageBand</title>
 <style>
 /* ================= ТОКЕНЫ ================= */
 :root{
-  --paper:   #EBEFEE;
-  --paper-2: #DFE5E3;
-  --card:    #F8FAF9;
-  --ink:     #0F1417;
-  --ink-2:   #414F4D;
-  --ink-3:   #75858A;
-  --rule:    #B9C4C2;
-  --rule-2:  #D7DEDC;
-
-  --hot:  #D62B0A;
-  --warm: #A96C00;
-  --deep: #085C6B;
+  --paper:#EBEFEE; --paper-2:#DFE5E3; --card:#F8FAF9;
+  --ink:#0F1417; --ink-2:#414F4D; --ink-3:#75858A;
+  --rule:#93A19E; --rule-2:#C2CCCA; --rule-3:#E3E8E7;
+  --hot:#D62B0A; --warm:#A96C00; --deep:#085C6B;
 
   --f-disp:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",system-ui,sans-serif;
   --f-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --f-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,"DejaVu Sans Mono",Consolas,monospace;
 
-  --rh:15px;
-  --maxw:1120px;
+  --rh:19px; --gut:62px; --maxw:1120px;
 }
 @media (prefers-color-scheme:dark){
   :root{
     --paper:#0A0E10; --paper-2:#101619; --card:#131A1D;
     --ink:#E9EFED; --ink-2:#A2B2AF; --ink-3:#71827F;
-    --rule:#2A3532; --rule-2:#1D2624;
+    --rule:#3A4744; --rule-2:#252F2D; --rule-3:#192120;
     --hot:#FF4A22; --warm:#F0A81E; --deep:#2FB6C9;
   }
 }
 :root[data-theme="light"]{
   --paper:#EBEFEE; --paper-2:#DFE5E3; --card:#F8FAF9;
   --ink:#0F1417; --ink-2:#414F4D; --ink-3:#75858A;
-  --rule:#B9C4C2; --rule-2:#D7DEDC;
+  --rule:#93A19E; --rule-2:#C2CCCA; --rule-3:#E3E8E7;
   --hot:#D62B0A; --warm:#A96C00; --deep:#085C6B;
 }
 :root[data-theme="dark"]{
   --paper:#0A0E10; --paper-2:#101619; --card:#131A1D;
   --ink:#E9EFED; --ink-2:#A2B2AF; --ink-3:#71827F;
-  --rule:#2A3532; --rule-2:#1D2624;
+  --rule:#3A4744; --rule-2:#252F2D; --rule-3:#192120;
   --hot:#FF4A22; --warm:#F0A81E; --deep:#2FB6C9;
 }
 
 *{box-sizing:border-box}
-body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--f-body);font-size:16px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
 h1,h2{font-family:var(--f-disp);font-weight:900;text-transform:uppercase;margin:0;text-wrap:balance}
-h1{font-size:clamp(32px,6.6vw,66px);letter-spacing:-.05em;line-height:.92}
+h1{font-size:clamp(30px,6.2vw,60px);letter-spacing:-.05em;line-height:.94}
 h2{font-size:clamp(19px,2.6vw,26px);letter-spacing:-.035em;line-height:1.05}
 p{margin:0}
 .eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3)}
 
-/* ================= ШАПКА ================= */
 .topbar{background:var(--paper-2);border-bottom:1px solid var(--rule)}
 .topbar .wrap{display:flex;align-items:center;gap:12px;height:50px}
 .brand{font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
 .brand b{color:var(--hot)}
 .topbar .sp{margin-left:auto}
-.mini{
-  font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-  background:transparent;color:var(--ink-2);border:1px solid var(--rule);
-  border-radius:2px;padding:6px 10px;cursor:pointer;
-}
+.mini{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:var(--ink-2);border:1px solid var(--rule);border-radius:2px;padding:6px 10px;cursor:pointer}
 .mini:hover{color:var(--ink);border-color:var(--ink-3)}
 
-/* ================= ГЕРОЙ ================= */
-.hero{padding:46px 0 32px}
-.hero .lede{max-width:54ch;margin-top:18px;color:var(--ink-2);font-size:17px}
-.specs{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
-.spec{
-  font-family:var(--f-mono);font-size:12px;background:var(--card);
-  border:1px solid var(--rule);border-radius:2px;padding:6px 10px;
-  display:flex;gap:8px;align-items:baseline;
-}
+.hero{padding:42px 0 28px}
+.hero .lede{max-width:52ch;margin-top:16px;color:var(--ink-2);font-size:17px}
+.specs{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+.spec{font-family:var(--f-mono);font-size:12px;background:var(--card);border:1px solid var(--rule-2);border-radius:2px;padding:6px 10px;display:flex;gap:8px;align-items:baseline}
 .spec span{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
 .spec b{font-weight:700}
 
-/* ================= ТРАНСПОРТ ================= */
-.transport{
-  position:sticky;top:0;z-index:40;background:var(--paper-2);
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-}
-.transport .wrap{display:flex;align-items:center;gap:13px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
-.btn{
-  font-family:var(--f-disp);font-weight:900;text-transform:uppercase;letter-spacing:.03em;font-size:13.5px;
-  border:1px solid var(--ink);background:var(--ink);color:var(--paper);
-  border-radius:2px;padding:11px 18px;cursor:pointer;
-  display:inline-flex;align-items:center;gap:9px;
-}
+/* ============ ТРАНСПОРТ ============ */
+.transport{position:sticky;top:0;z-index:40;background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.transport .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.btn{font-family:var(--f-disp);font-weight:900;text-transform:uppercase;letter-spacing:.03em;font-size:13.5px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:2px;padding:10px 17px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
 .btn:hover{opacity:.85}
 .btn--hot{background:var(--hot);border-color:var(--hot);color:#fff}
 .btn .g{font-family:var(--f-mono);font-size:12px}
 .ctl{display:flex;align-items:center;gap:8px}
 .ctl label{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
 .ctl output{font-family:var(--f-mono);font-size:13px;font-weight:700;min-width:34px;font-variant-numeric:tabular-nums}
-input[type=range]{accent-color:var(--hot);width:96px}
-.pos{
-  font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;color:var(--ink-2);
-  margin-left:auto;font-variant-numeric:tabular-nums;
-}
+input[type=range]{accent-color:var(--hot);width:92px}
+.pos{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);margin-left:auto;font-variant-numeric:tabular-nums}
 .pos b{color:var(--hot)}
-.jump{display:flex;align-items:center;gap:6px}
-.jump>span{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
-.jump button{
-  font-family:var(--f-mono);font-size:11px;font-weight:700;
-  background:var(--card);border:1px solid var(--rule);color:var(--ink-2);
-  border-radius:2px;padding:6px 9px;cursor:pointer;min-width:28px;
-}
-.jump button:hover{border-color:var(--ink-3);color:var(--ink)}
-.jump button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-.jump button.z{min-width:0;letter-spacing:.1em;text-transform:uppercase;font-weight:400;margin-left:4px}
-body.zoom .rollinner{min-width:2100px}
 
-/* ================= ЛЕГЕНДА ================= */
-.legend{background:var(--card);border-bottom:1px solid var(--rule)}
-.legend .wrap{
-  display:flex;gap:26px;flex-wrap:wrap;padding-top:13px;padding-bottom:13px;
-  font-family:var(--f-mono);font-size:11.5px;color:var(--ink-2);
+/* ============ ВЫБОР ТАКТА ============ */
+.bartabs{background:var(--card);border-bottom:1px solid var(--rule)}
+.bartabs .wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.bartabs .lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-right:2px}
+.bartabs button{
+  font-family:var(--f-disp);font-weight:900;text-transform:uppercase;font-size:13px;letter-spacing:-.01em;
+  background:var(--paper);border:1px solid var(--rule-2);color:var(--ink-2);
+  border-radius:2px;padding:9px 14px;cursor:pointer;
 }
-.legend b{color:var(--ink);font-weight:700}
-.swatch{display:inline-block;width:20px;height:9px;vertical-align:-1px;margin-right:6px;border-radius:1px}
+.bartabs button:hover{border-color:var(--ink-3);color:var(--ink)}
+.bartabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.bartabs .chord{font-family:var(--f-mono);font-size:12px;color:var(--ink-3);margin-left:6px}
+.bartabs .chord b{color:var(--deep);font-size:14px}
 
-/* ================= ПИАНО-РОЛЛ ================= */
-.roll{margin:34px 0}
-.rollhead{display:flex;align-items:flex-end;gap:12px;margin-bottom:9px;flex-wrap:wrap}
-.rollnum{
-  font-family:var(--f-disp);font-weight:900;font-size:42px;line-height:.8;letter-spacing:-.06em;
-  color:transparent;-webkit-text-stroke:1.5px var(--c);
-}
-.rolltitle{font-family:var(--f-disp);font-weight:900;text-transform:uppercase;font-size:20px;letter-spacing:-.03em;line-height:1}
-.rollsub{font-family:var(--f-mono);font-size:11px;letter-spacing:.09em;color:var(--ink-3);margin-top:3px}
-.rollhead .right{margin-left:auto;display:flex;align-items:center;gap:8px}
-.dlmini{
-  font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  background:transparent;border:1px solid var(--rule);color:var(--ink-2);
-  border-radius:2px;padding:6px 9px;cursor:pointer;
-}
+.howto{background:var(--paper-2);border-bottom:1px solid var(--rule)}
+.howto .wrap{display:flex;gap:24px;flex-wrap:wrap;padding-top:11px;padding-bottom:11px;font-family:var(--f-mono);font-size:11.5px;color:var(--ink-2)}
+.howto b{color:var(--ink)}
+.sw{display:inline-block;width:18px;height:9px;vertical-align:-1px;margin-right:6px;border-radius:1px}
+
+/* ============ ПИАНО-РОЛЛ ============ */
+.roll{margin:30px 0 34px}
+.rollhead{display:flex;align-items:flex-end;gap:11px;margin-bottom:8px;flex-wrap:wrap}
+.rollnum{font-family:var(--f-disp);font-weight:900;font-size:38px;line-height:.78;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px var(--c)}
+.rolltitle{font-family:var(--f-disp);font-weight:900;text-transform:uppercase;font-size:19px;letter-spacing:-.03em;line-height:1}
+.rollsub{font-family:var(--f-mono);font-size:11px;color:var(--ink-3);margin-top:3px}
+.rollhead .right{margin-left:auto}
+.dlmini{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:transparent;border:1px solid var(--rule-2);color:var(--ink-2);border-radius:2px;padding:6px 9px;cursor:pointer}
 .dlmini:hover{border-color:var(--c);color:var(--c)}
 
-.rollbox{
-  border:1px solid var(--rule);border-radius:2px;background:var(--card);
-  overflow-x:auto;overflow-y:hidden;
-}
-.rollinner{min-width:760px;display:grid;grid-template-columns:66px 1fr}
+.rollbox{border:1px solid var(--rule);border-radius:2px;background:var(--card);overflow-x:auto;overflow-y:hidden}
+.rollinner{display:grid;grid-template-columns:var(--gut) 1fr}
+body.wide .rollinner{min-width:900px}
 
-.gutter{
-  position:sticky;left:0;z-index:3;background:var(--card);
-  border-right:1px solid var(--rule);
-}
-.gutter .gcell{
-  height:var(--rh);display:flex;align-items:center;justify-content:flex-end;
-  padding-right:8px;border-bottom:1px solid var(--rule-2);
-  font-family:var(--f-mono);font-size:9.5px;color:var(--ink-3);letter-spacing:.02em;
-  white-space:nowrap;overflow:hidden;
-}
-.gutter .gcell.acc{color:var(--ink);font-weight:700}
-.gutter .gcell.blk{background:var(--paper-2)}
-.gutter .ghead,.ruler{
-  height:24px;border-bottom:1px solid var(--rule);background:var(--paper-2);
-}
-.gutter .ghead{
-  display:flex;align-items:center;justify-content:flex-end;padding-right:8px;
-  font-family:var(--f-mono);font-size:9px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;
-}
+.gutter{position:sticky;left:0;z-index:3;background:var(--card);border-right:1px solid var(--rule)}
+.gh1,.gh2{border-bottom:1px solid var(--rule-2);background:var(--paper-2)}
+.gh1{height:21px}
+.gh2{height:20px;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:flex-end;padding-right:7px;font-family:var(--f-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.gcell{height:var(--rh);display:flex;align-items:center;justify-content:flex-end;padding-right:7px;border-bottom:1px solid var(--rule-3);font-family:var(--f-mono);font-size:10px;color:var(--ink-3);white-space:nowrap}
+.gcell.acc{color:var(--ink);font-weight:700}
+.gcell.blk{background:var(--paper-2)}
 
-.lanepane{position:relative}
-.ruler{display:grid;grid-template-columns:repeat(64,1fr);position:relative}
-.ruler .tick{
-  border-left:1px solid transparent;
-  font-family:var(--f-mono);font-size:9px;color:var(--ink-3);
-  display:flex;align-items:center;padding-left:4px;font-variant-numeric:tabular-nums;
-  white-space:nowrap;overflow:visible;
+.lanepane{position:relative;min-width:0}
+.band{display:grid;background:var(--paper-2)}
+.band1{height:21px;border-bottom:1px solid var(--rule-2)}
+.band2{height:20px;border-bottom:1px solid var(--rule)}
+.band .c{
+  position:relative;overflow:hidden;
+  font-family:var(--f-mono);display:flex;align-items:center;
+  border-left:1px solid var(--rule-2);
 }
-.ruler .tick.beat{border-left-color:var(--rule-2)}
-.ruler .tick.bar{border-left-color:var(--rule);color:var(--ink);font-weight:700;font-size:10px}
+.band1 .c{
+  justify-content:center;font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);border-left-color:var(--rule);
+}
+.band2 .c{padding-left:3px;font-size:9px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.band2 .c.beat{color:var(--ink);font-weight:700;border-left-color:var(--rule-2)}
+.band2 .c.bar{border-left-color:var(--rule)}
 
-.lanes{display:grid;grid-template-columns:repeat(64,1fr);position:relative}
-.lane{grid-column:1/-1;height:var(--rh);border-bottom:1px solid var(--rule-2)}
+.lanes{display:grid;position:relative}
+.lane{grid-column:1/-1;height:var(--rh);border-bottom:1px solid var(--rule-3)}
 .lane.blk{background:var(--paper-2)}
-.gridlines{
-  position:absolute;inset:0;pointer-events:none;z-index:1;
-  background-image:
-    linear-gradient(to right,var(--rule) 0 1px,transparent 1px),
-    linear-gradient(to right,var(--rule-2) 0 1px,transparent 1px);
-  background-size:calc(100%/4) 100%, calc(100%/16) 100%;
-  background-repeat:repeat-x;
-}
+.gridlines{position:absolute;inset:0;pointer-events:none;z-index:1;background-repeat:repeat-x}
 .note{
-  z-index:2;align-self:center;height:calc(var(--rh) - 3px);
-  background:var(--c);border-radius:1.5px;
-  box-shadow:0 0 0 1px rgba(0,0,0,.12) inset;
+  z-index:2;align-self:center;height:calc(var(--rh) - 4px);
+  background:var(--c);border-radius:2px;
+  display:flex;align-items:center;padding-left:4px;overflow:hidden;
+  font-family:var(--f-mono);font-size:9.5px;font-weight:700;color:#fff;
+  letter-spacing:.02em;white-space:nowrap;
 }
-.note.hit{filter:brightness(1.45) saturate(1.2)}
-.ph{
-  position:absolute;top:0;bottom:0;width:2px;background:var(--hot);
-  z-index:4;pointer-events:none;opacity:0;transform:translateX(-1px);
-}
-.ph.on{opacity:1}
-.chordrow{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  font-family:var(--f-mono);font-size:11px;font-weight:700;
-  border-top:1px solid var(--rule);background:var(--paper-2);
-}
-.chordrow div{padding:5px 8px;border-left:1px solid var(--rule);color:var(--deep)}
-.chordrow div:first-child{border-left:none}
+:root[data-theme="dark"] .note,
+:root:not([data-theme]) .note{color:inherit}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .note{color:#0A0E10}}
+:root[data-theme="dark"] .note{color:#0A0E10}
+:root[data-theme="light"] .note{color:#fff}
+body.wide .note{font-size:0;padding:0}
+.note.hit{filter:brightness(1.4) saturate(1.2)}
+.ph{position:absolute;top:0;bottom:0;width:2px;background:var(--hot);z-index:4;pointer-events:none;display:none}
+.ph.on{display:block}
 
-/* ================= СЕКЦИИ ================= */
-section{padding:42px 0;border-top:1px solid var(--rule)}
-.sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+/* ============ СПИСОК НОТ ============ */
+.notelist{border-top:1px solid var(--rule);background:var(--paper-2);padding:10px 13px}
+.notelist .t{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.hintline{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+.nl{display:flex;flex-wrap:wrap;gap:6px}
+.nl .item{
+  font-family:var(--f-mono);font-size:12px;background:var(--card);
+  border:1px solid var(--rule-2);border-left:3px solid var(--c);
+  border-radius:2px;padding:5px 9px;font-variant-numeric:tabular-nums;
+}
+.nl .item .p{color:var(--hot);font-weight:700}
+.nl .item .v{color:var(--ink);font-weight:700}
+.nl .item .d{color:var(--ink-3)}
+.nl.drums{flex-direction:column;gap:4px}
+.nl.drums .item{border-left-color:var(--c);width:100%}
+.nl.drums .item .k{display:inline-block;min-width:96px;color:var(--ink-2)}
+
+/* ============ СЕКЦИИ ============ */
+section{padding:40px 0;border-top:1px solid var(--rule-2)}
+.sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap}
 .sechead p{color:var(--ink-2);max-width:50ch;font-size:15px}
-
-.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:2px;background:var(--card)}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule-2);border-radius:2px;background:var(--card)}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--rule-3);vertical-align:top}
 th{font-family:var(--f-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);background:var(--paper-2);white-space:nowrap}
 tr:last-child td{border-bottom:none}
 td.n{font-family:var(--f-mono);font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
-td b{font-weight:600}
-
 ol.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
 ol.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:13px;align-items:start}
-ol.steps li::before{
-  content:counter(s);font-family:var(--f-mono);font-size:12px;font-weight:700;color:var(--hot);
-  border:1px solid var(--rule);border-radius:2px;text-align:center;line-height:26px;height:28px;
-}
+ol.steps li::before{content:counter(s);font-family:var(--f-mono);font-size:12px;font-weight:700;color:var(--hot);border:1px solid var(--rule-2);border-radius:2px;text-align:center;line-height:26px;height:28px}
 ol.steps li>span{color:var(--ink-2);font-size:15px;max-width:62ch;padding-top:1px}
 ol.steps b{color:var(--ink);font-weight:600}
-
-.note-box{
-  border-left:3px solid var(--warm);background:var(--card);
-  padding:13px 16px;margin-top:18px;font-size:14.5px;color:var(--ink-2);max-width:64ch;
-}
+.note-box{border-left:3px solid var(--warm);background:var(--card);padding:13px 16px;margin-top:18px;font-size:14.5px;color:var(--ink-2);max-width:64ch}
 .note-box b{color:var(--ink)}
-code{font-family:var(--f-mono);font-size:.88em;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:2px;padding:1px 5px}
-
-footer{padding:32px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-size:11.5px;letter-spacing:.05em}
+code{font-family:var(--f-mono);font-size:.88em;background:var(--paper-2);border:1px solid var(--rule-3);border-radius:2px;padding:1px 5px}
+footer{padding:30px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-size:11.5px}
 
 @media (max-width:640px){
-  .hero{padding:30px 0 22px}
-  .rollnum{font-size:32px}
-  input[type=range]{width:78px}
+  :root{--gut:54px}
+  .hero{padding:26px 0 20px}
+  .rollnum{font-size:30px}
+  input[type=range]{width:74px}
   .pos{margin-left:0;width:100%}
+  .band2 .c{font-size:8px;padding-left:2px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
 <header class="topbar">
   <div class="wrap">
-    <div class="brand">Схема нот · <b>Бразильский фонк</b></div>
+    <div class="brand">Что куда вставлять · <b>Бразильский фонк</b></div>
     <div class="sp"></div>
     <button class="mini" id="themebtn" type="button">Тема</button>
   </div>
@@ -261,19 +209,18 @@ footer{padding:32px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-siz
 
 <div class="hero">
   <div class="wrap">
-    <div class="eyebrow">Brazilian phonk / mega funk · 4 такта · GarageBand</div>
-    <h1>Ноты<br>для вставки</h1>
+    <div class="eyebrow">Brazilian phonk / mega funk · GarageBand</div>
+    <h1>Такт за тактом</h1>
     <p class="lede">
-      Шесть дорожек, четыре такта, каждая нота на своём месте. Смотри на сетку и повторяй
-      в пиано-ролле — или скачай готовый MIDI и перетащи в GarageBand на Mac.
-      Кнопка «Играть» проиграет всё это целиком, чтобы ты слышал, что собираешь.
+      Выбираешь такт — видишь ровно те ноты, которые в нём стоят: и на сетке, и списком
+      под ней. Открываешь пиано-ролл в GarageBand и повторяешь. Или качаешь MIDI
+      и перетаскиваешь готовое.
     </p>
     <div class="specs">
       <div class="spec"><span>Темп</span><b>130 BPM</b></div>
       <div class="spec"><span>Тональность</span><b>A minor</b></div>
       <div class="spec"><span>Размер</span><b>4/4</b></div>
       <div class="spec"><span>Сетка</span><b>1/16</b></div>
-      <div class="spec"><span>Аккорды</span><b>Am · F · G · Em</b></div>
       <div class="spec"><span>Петля</span><b>4 такта</b></div>
     </div>
   </div>
@@ -292,25 +239,29 @@ footer{padding:32px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-siz
       <label for="vol">Громк.</label>
       <input type="range" id="vol" min="0" max="100" step="1" value="75">
     </div>
-    <div class="jump" role="group" aria-label="Перейти к такту">
-      <span>Такт</span>
-      <button type="button" data-bar="0">1</button>
-      <button type="button" data-bar="1">2</button>
-      <button type="button" data-bar="2">3</button>
-      <button type="button" data-bar="3">4</button>
-      <button type="button" id="zoom" class="z">Крупнее</button>
-    </div>
-    <div class="pos">Играет: такт <b id="posbar">1</b> · доля <b id="posbeat">1</b></div>
+    <div class="pos">Играет: такт <b id="posbar">1</b>, доля <b id="posbeat">1</b></div>
   </div>
 </div>
 
-<div class="legend">
+<div class="bartabs">
   <div class="wrap">
-    <div><span class="swatch" style="background:var(--hot)"></span><b>Ударные</b></div>
-    <div><span class="swatch" style="background:var(--warm)"></span><b>808 бас</b></div>
-    <div><span class="swatch" style="background:var(--deep)"></span><b>Мелодика</b></div>
-    <div>Ширина блока = длина ноты</div>
-    <div>Жирная линия = начало такта, тонкая = доля</div>
+    <span class="lbl">Показать</span>
+    <button type="button" data-bar="0" aria-pressed="true">Такт 1</button>
+    <button type="button" data-bar="1" aria-pressed="false">Такт 2</button>
+    <button type="button" data-bar="2" aria-pressed="false">Такт 3</button>
+    <button type="button" data-bar="3" aria-pressed="false">Такт 4</button>
+    <button type="button" data-bar="all" aria-pressed="false">Все 4 такта</button>
+    <span class="chord" id="chordlabel">аккорд такта: <b>Am</b></span>
+  </div>
+</div>
+
+<div class="howto">
+  <div class="wrap">
+    <div><span class="sw" style="background:var(--hot)"></span><b>Ударные</b></div>
+    <div><span class="sw" style="background:var(--warm)"></span><b>808 бас</b></div>
+    <div><span class="sw" style="background:var(--deep)"></span><b>Мелодика</b></div>
+    <div><b>2.3</b> = вторая доля, третья шестнадцатая</div>
+    <div>Ширина блока = сколько шестнадцатых держать ноту</div>
   </div>
 </div>
 
@@ -320,20 +271,18 @@ footer{padding:32px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-siz
   <div class="wrap">
     <div class="sechead">
       <h2>Какие инструменты открыть</h2>
-      <p>Порядок сверху вниз — тот же, что у дорожек выше. Создавай их в этом же порядке, и схема совпадёт с экраном.</p>
+      <p>Заводи дорожки в этом же порядке — тогда экран GarageBand будет выглядеть как схема выше.</p>
     </div>
     <div class="tablewrap">
       <table>
-        <thead>
-          <tr><th>№</th><th>Дорожка</th><th>Что выбрать в GarageBand</th><th>Настройка</th></tr>
-        </thead>
+        <thead><tr><th>№</th><th>Дорожка</th><th>Что выбрать в GarageBand</th><th>Настройка</th></tr></thead>
         <tbody>
-          <tr><td class="n">1</td><td><b>Кик</b></td><td>Барабаны → Beat Sequencer, кит <b>«Hip Hop»</b>. На Mac — Drum Machine Designer, кит «Boom Bap».</td><td>Опусти тюн бочки на −2 полутона, чтобы низ был глубже</td></tr>
-          <tr><td class="n">2</td><td><b>808 бас</b></td><td>Клавиши → Бас → <b>«808 Bass»</b> или «Sub Bass».</td><td>Release почти на максимум — нота должна тянуться до следующей</td></tr>
-          <tr><td class="n">3</td><td><b>Аккорды</b></td><td>Клавиши → Синтезатор → <b>«Dark Pad»</b> / «Warm Pad». Подойдёт и Electric Piano с реверберацией.</td><td>Attack чуть медленный, срез фильтра около 2 кГц</td></tr>
-          <tr><td class="n">4</td><td><b>Лид</b></td><td>Клавиши → Синтезатор → <b>«Analog Lead»</b> / «Saw Lead», моно-режим.</td><td>Портаменто 10–15% — даст характерное скольжение</td></tr>
-          <tr><td class="n">5</td><td><b>Плак</b></td><td>Клавиши → Синтезатор → <b>«Pluck»</b> / «Marimba Synth».</td><td>Короткий Decay, Release почти в ноль</td></tr>
-          <tr><td class="n">6</td><td><b>Перкуссия</b></td><td>Тот же <b>Beat Sequencer</b> отдельной дорожкой: снэйр, хэты, каубелл, тамборим.</td><td>Каубелл — главная примета жанра, не убирай его</td></tr>
+          <tr><td class="n">1</td><td><b>Кик</b></td><td>Барабаны → Beat Sequencer, кит <b>«Hip Hop»</b>. На Mac — Drum Machine Designer, кит «Boom Bap».</td><td>Тюн бочки на −2 полутона</td></tr>
+          <tr><td class="n">2</td><td><b>808 бас</b></td><td>Клавиши → Бас → <b>«808 Bass»</b> или «Sub Bass».</td><td>Release почти на максимум</td></tr>
+          <tr><td class="n">3</td><td><b>Аккорды</b></td><td>Клавиши → Синтезатор → <b>«Dark Pad»</b> / «Warm Pad».</td><td>Срез фильтра около 2 кГц</td></tr>
+          <tr><td class="n">4</td><td><b>Лид</b></td><td>Клавиши → Синтезатор → <b>«Analog Lead»</b> / «Saw Lead», моно-режим.</td><td>Портаменто 10–15%</td></tr>
+          <tr><td class="n">5</td><td><b>Плак</b></td><td>Клавиши → Синтезатор → <b>«Pluck»</b> / «Marimba Synth».</td><td>Короткий Decay</td></tr>
+          <tr><td class="n">6</td><td><b>Перкуссия</b></td><td>Тот же <b>Beat Sequencer</b> отдельной дорожкой: снэйр, хэты, каубелл, тамборим.</td><td>Каубелл не убирай — это примета жанра</td></tr>
         </tbody>
       </table>
     </div>
@@ -344,99 +293,85 @@ footer{padding:32px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-siz
   <div class="wrap">
     <div class="sechead">
       <h2>Как вставить</h2>
-      <p>Два пути. Через MIDI быстрее, но он работает только на Mac.</p>
+      <p>Через MIDI быстрее, но он работает только на Mac.</p>
     </div>
     <ol class="steps">
-      <li><span><b>Заведи проект:</b> темп <code>130</code>, тональность <code>A minor</code>, размер <code>4/4</code>. Метроном включи, сетку поставь на <code>1/16</code>.</span></li>
-      <li><span><b>Mac:</b> нажми «Скачать MIDI» вверху и перетащи файл прямо в окно GarageBand. Каждая дорожка встанет на своё место со всеми нотами.</span></li>
-      <li><span><b>iPhone или iPad:</b> GarageBand на iOS не умеет импортировать MIDI. Вбивай по схеме вручную — открой пиано-ролл, найди нужную ноту слева и ставь блоки по сетке. Названия нот на схеме совпадают с подписями в редакторе.</span></li>
-      <li><span><b>Зациклил 4 такта</b> — дальше просто копируй петлю. Полный трек: интро 8 тактов только лид, разгон 8 тактов с киком и хэтами, дроп 16 тактов всё вместе, брейк 8 тактов без барабанов, второй дроп 16 тактов, аутро 8 тактов на убывание.</span></li>
+      <li><span><b>Заведи проект:</b> темп <code>130</code>, тональность <code>A minor</code>, размер <code>4/4</code>. Сетку поставь на <code>1/16</code>, метроном включи.</span></li>
+      <li><span><b>Mac:</b> жми «Скачать MIDI» и перетащи файл прямо в окно GarageBand — все шесть дорожек встанут со всеми нотами.</span></li>
+      <li><span><b>iPhone или iPad:</b> GarageBand на iOS не умеет импортировать MIDI. Открывай пиано-ролл и ставь ноты по списку под каждой сеткой: первая цифра — доля, вторая — шестнадцатая внутри доли.</span></li>
+      <li><span><b>Дальше копируй петлю.</b> Полный трек: интро 8 тактов только лид, разгон 8 тактов с киком и хэтами, дроп 16 тактов всё вместе, брейк 8 тактов без барабанов, второй дроп 16 тактов, аутро 8 тактов на убывание.</span></li>
     </ol>
     <div class="note-box">
-      <b>Главное про этот жанр.</b> Кик стоит не по четвертям, а группами 3-3-4-3-3 — позиции
-      1.1, 1.4, 2.3, 3.3, 4.2 в каждом такте. Именно эта сбивка делает бит бразильским.
-      Если выровнять кик по долям, получится обычный хип-хоп.
+      <b>Главное про этот жанр.</b> Кик стоит не по четвертям, а группами 3-3-4-3-3 —
+      позиции 1.1, 1.4, 2.3, 3.3, 4.2 в каждом такте. Именно эта сбивка делает бит
+      бразильским. Выровняешь кик по долям — получится обычный хип-хоп.
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sechead">
-      <h2>Сведение</h2>
-      <p>Выстави это, а потом правь на слух.</p>
-    </div>
+    <div class="sechead"><h2>Сведение</h2><p>Выстави это, а потом правь на слух.</p></div>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Дорожка</th><th>Громкость</th><th>Панорама</th><th>Реверб</th><th>Что сделать с эквалайзером</th></tr></thead>
+        <thead><tr><th>Дорожка</th><th>Громкость</th><th>Панорама</th><th>Реверб</th><th>Эквалайзер</th></tr></thead>
         <tbody>
-          <tr><td>Кик</td><td class="n">−3 dB</td><td class="n">центр</td><td class="n">0%</td><td>Подними 60 Гц и 3 кГц — низ и щелчок</td></tr>
+          <tr><td>Кик</td><td class="n">−3 dB</td><td class="n">центр</td><td class="n">0%</td><td>Подними 60 Гц и 3 кГц</td></tr>
           <tr><td>808 бас</td><td class="n">−5 dB</td><td class="n">центр</td><td class="n">0%</td><td>Срежь всё выше 400 Гц</td></tr>
-          <tr><td>Аккорды</td><td class="n">−11 dB</td><td class="n">20% влево</td><td class="n">25%</td><td>Срежь всё ниже 200 Гц, иначе задавит 808</td></tr>
-          <tr><td>Лид</td><td class="n">−8 dB</td><td class="n">центр</td><td class="n">20%</td><td>Убери 300–500 Гц, там муть</td></tr>
+          <tr><td>Аккорды</td><td class="n">−11 dB</td><td class="n">20% влево</td><td class="n">25%</td><td>Срежь всё ниже 200 Гц</td></tr>
+          <tr><td>Лид</td><td class="n">−8 dB</td><td class="n">центр</td><td class="n">20%</td><td>Убери 300–500 Гц</td></tr>
           <tr><td>Плак</td><td class="n">−13 dB</td><td class="n">25% вправо</td><td class="n">35%</td><td>Срежь всё ниже 500 Гц</td></tr>
           <tr><td>Перкуссия</td><td class="n">−12 dB</td><td class="n">хэты вправо</td><td class="n">10%</td><td>Срежь всё ниже 300 Гц</td></tr>
         </tbody>
       </table>
     </div>
     <div class="note-box">
-      <b>Сайдчейна в GarageBand нет.</b> Он и не нужен: в схеме аккорды и 808 уже не бьют
-      одновременно с киком на сильных позициях. На мастер-канал поставь компрессор с пресетом
-      <code>Drum Bus</code> и лимитер сверху — этого хватит.
+      <b>Сайдчейна в GarageBand нет.</b> Он и не нужен: аккорды и 808 уже не бьют
+      одновременно с киком на сильных позициях. На мастер поставь компрессор с пресетом
+      <code>Drum Bus</code> и лимитер сверху.
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">130 BPM · A minor · Am–F–G–Em · звук на странице синтезирован Web Audio, семплы не нужны</div>
-</footer>
+<footer><div class="wrap">130 BPM · A minor · Am–F–G–Em · звук синтезирован Web Audio, семплы не нужны</div></footer>
 
 <script>
 (function(){
 "use strict";
 
-/* ============ МУЗЫКАЛЬНЫЕ ДАННЫЕ ============ */
+/* ================= ДАННЫЕ ================= */
 var BARS=4, SPB=16, STEPS=BARS*SPB;
 var NAMES=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
 var BLACK=[1,3,6,8,10];
 function nm(m){ return NAMES[m%12]+(Math.floor(m/12)-1); }
 function isBlack(m){ return BLACK.indexOf(m%12)>=0; }
+/* позиция внутри такта: доля.шестнадцатая */
+function pos(s){ return (Math.floor((s%SPB)/4)+1)+"."+((s%4)+1); }
 
-/* корни и квинты аккордов по тактам: Am F G Em */
-var ROOT=[33,29,31,28];          // A1 F1 G1 E1
-var FIFTH=[40,36,38,35];         // E2 C2 D2 B1
+var ROOT=[33,29,31,28], FIFTH=[40,36,38,35];
 var CHORDS=[[57,60,64],[53,57,60],[55,59,62],[52,55,59]];
 var CHORDNAMES=["Am","F","G","Em"];
 
 function build(){
-  var kick=[],bass=[],chord=[],lead=[],pluck=[],drum=[];
-  var b,off;
-
-  /* --- КИК: 3-3-4-3-3 --- */
+  var kick=[],bass=[],chord=[],lead=[],pluck=[],drum=[],b,off;
   for(b=0;b<BARS;b++){
     off=b*SPB;
     [0,3,6,10,13].forEach(function(s){ kick.push({s:off+s,l:1,m:36,lane:0}); });
     if(b===3) kick.push({s:off+15,l:1,m:36,lane:0});
   }
-
-  /* --- 808 --- */
   for(b=0;b<BARS;b++){
     off=b*SPB;
-    bass.push({s:off+0, l:6,m:ROOT[b]});
-    bass.push({s:off+6, l:4,m:ROOT[b]});
+    bass.push({s:off+0,l:6,m:ROOT[b]});
+    bass.push({s:off+6,l:4,m:ROOT[b]});
     bass.push({s:off+10,l:3,m:FIFTH[b]});
     bass.push({s:off+13,l:3,m:ROOT[b]});
   }
-
-  /* --- АККОРДЫ --- */
   for(b=0;b<BARS;b++){
     off=b*SPB;
     [[0,3],[6,3],[12,4]].forEach(function(p){
       CHORDS[b].forEach(function(m){ chord.push({s:off+p[0],l:p[1],m:m}); });
     });
   }
-
-  /* --- ЛИД --- */
   var L=[
     [[0,2,76],[2,2,81],[4,2,79],[6,2,76],[8,4,74],[12,4,72]],
     [[0,2,72],[2,2,77],[4,2,76],[6,2,72],[8,4,69],[12,4,72]],
@@ -444,22 +379,18 @@ function build(){
     [[0,2,76],[2,2,71],[4,2,69],[6,2,71],[8,8,76]]
   ];
   L.forEach(function(bar,i){ bar.forEach(function(n){ lead.push({s:i*SPB+n[0],l:n[1],m:n[2]}); }); });
-
-  /* --- ПЛАК --- */
   var P=[[81,76,84,81],[84,81,77,84],[83,79,74,83],[76,83,81,76]];
   P.forEach(function(bar,i){
     [3,7,11,14].forEach(function(s,j){ pluck.push({s:i*SPB+s,l:1,m:bar[j]}); });
   });
-
-  /* --- ПЕРКУССИЯ: 0 хэт откр, 1 хэт закр, 2 каубелл, 3 снэйр, 4 тамборим --- */
   var GM=[46,42,56,38,37];
   function d(lane,s){ drum.push({s:s,l:1,lane:lane,m:GM[lane]}); }
   for(b=0;b<BARS;b++){
     off=b*SPB;
-    var openBar = (b===0||b===2);
-    var closed = [0,2,4,6,8,10,12];
+    var openBar=(b===0||b===2);
+    var closed=[0,2,4,6,8,10,12];
     if(!openBar) closed.push(14);
-    if(b===3) closed = closed.concat([13,14,15]);
+    if(b===3) closed=closed.concat([13,14,15]);
     closed.forEach(function(s){ d(1,off+s); });
     if(openBar) d(0,off+14);
     [0,3,8,11].forEach(function(s){ d(2,off+s); });
@@ -467,134 +398,219 @@ function build(){
     if(b===1||b===3) d(3,off+14);
     [7,15].forEach(function(s){ d(4,off+s); });
   }
-
   return {kick:kick,bass:bass,chord:chord,lead:lead,pluck:pluck,drum:drum};
 }
 var N=build();
 
 var TRACKS=[
-  {id:"kick", num:1, title:"Кик",         sub:"KICK · позиции 1.1 · 1.4 · 2.3 · 3.3 · 4.2 в каждом такте",
-   color:"var(--hot)",  kind:"drum", lanes:["Кик"], notes:N.kick, mid:"Kick", ch:9},
-  {id:"bass", num:2, title:"808 бас",     sub:"808 BASS · длинные ноты, каждая тянется до следующей",
-   color:"var(--warm)", kind:"pitch", lo:28, hi:40, notes:N.bass, mid:"808 Bass", ch:0, chords:true},
-  {id:"chord",num:3, title:"Аккорды",     sub:"CHORDS · три ноты вместе, короткие стабы",
-   color:"var(--deep)", kind:"pitch", lo:52, hi:64, notes:N.chord, mid:"Chords", ch:0, chords:true},
-  {id:"lead", num:4, title:"Лид",         sub:"LEAD · главная мелодия, играется одной нотой",
+  {id:"kick", num:1, title:"Кик", sub:"KICK · главный рисунок жанра",
+   color:"var(--hot)", kind:"drum", lanes:["Кик"], notes:N.kick, mid:"Kick", ch:9},
+  {id:"bass", num:2, title:"808 бас", sub:"808 BASS · длинные ноты",
+   color:"var(--warm)", kind:"pitch", lo:28, hi:40, notes:N.bass, mid:"808 Bass", ch:0},
+  {id:"chord",num:3, title:"Аккорды", sub:"CHORDS · по три ноты вместе",
+   color:"var(--deep)", kind:"pitch", lo:52, hi:64, notes:N.chord, mid:"Chords", ch:0, group:true},
+  {id:"lead", num:4, title:"Лид", sub:"LEAD · мелодия по одной ноте",
    color:"var(--deep)", kind:"pitch", lo:69, hi:81, notes:N.lead, mid:"Lead", ch:0},
-  {id:"pluck",num:5, title:"Плак",        sub:"PLUCK · короткие щипки строго между долями",
+  {id:"pluck",num:5, title:"Плак", sub:"PLUCK · короткие щипки между долями",
    color:"var(--deep)", kind:"pitch", lo:74, hi:84, notes:N.pluck, mid:"Pluck", ch:0},
-  {id:"drum", num:6, title:"Перкуссия",   sub:"PERC · хэты, снэйр, каубелл, тамборим",
-   color:"var(--hot)",  kind:"drum",
+  {id:"drum", num:6, title:"Перкуссия", sub:"PERC · хэты, снэйр, каубелл, тамборим",
+   color:"var(--hot)", kind:"drum",
    lanes:["Хэт откр.","Хэт закр.","Каубелл","Снэйр","Тамборим"], notes:N.drum, mid:"Perc", ch:9}
 ];
 
-/* ============ РИСОВАНИЕ ============ */
+/* ================= РИСОВАНИЕ ================= */
 var host=document.getElementById("rolls");
-var noteEls={}, phEls=[];
+var view=0;                /* 0..3 — один такт, "all" — все четыре */
+var noteIndex={};          /* id дорожки -> {абсолютный шаг -> [элементы]} */
+var phEls=[];
 
 function rowsOf(t){
-  if(t.kind==="drum") return t.lanes.map(function(l){ return {label:l, blk:false}; });
+  if(t.kind==="drum") return t.lanes.map(function(l){ return {label:l,blk:false}; });
   var r=[];
-  for(var m=t.hi;m>=t.lo;m--) r.push({label:nm(m), blk:isBlack(m), midi:m});
+  for(var m=t.hi;m>=t.lo;m--) r.push({label:nm(m),blk:isBlack(m),midi:m});
   return r;
 }
-function rowIndex(t,rows,n){
-  if(t.kind==="drum") return n.lane;
-  return t.hi - n.m;
+
+function render(){
+  var all=(view==="all"), cols=all?STEPS:SPB, from=all?0:view*SPB;
+  document.body.classList.toggle("wide",all);
+  host.innerHTML=""; noteIndex={}; phEls=[];
+
+  TRACKS.forEach(function(t){
+    var rows=rowsOf(t);
+    var sec=document.createElement("div");
+    sec.className="roll";
+    sec.style.setProperty("--c",t.color);
+    if(t.kind==="drum") sec.style.setProperty("--rh","24px");
+
+    var head=document.createElement("div");
+    head.className="rollhead";
+    head.innerHTML='<div class="rollnum">'+t.num+'</div>'+
+      '<div><div class="rolltitle">'+t.title+'</div><div class="rollsub">'+t.sub+'</div></div>'+
+      '<div class="right"><button class="dlmini" type="button">MIDI дорожки</button></div>';
+    head.querySelector(".dlmini").addEventListener("click",function(){ downloadMidi([t],t.mid); });
+    sec.appendChild(head);
+
+    var box=document.createElement("div"); box.className="rollbox";
+    var inner=document.createElement("div"); inner.className="rollinner";
+
+    /* левая колонка */
+    var gut=document.createElement("div"); gut.className="gutter";
+    var g1=document.createElement("div"); g1.className="gh1"; gut.appendChild(g1);
+    var g2=document.createElement("div"); g2.className="gh2";
+    g2.textContent=(t.kind==="drum")?"Звук":"Нота"; gut.appendChild(g2);
+    rows.forEach(function(r){
+      var c=document.createElement("div");
+      var isC=/^C[0-9]/.test(r.label);
+      c.className="gcell"+(r.blk?" blk":"")+(isC?" acc":"");
+      c.textContent=r.label;
+      gut.appendChild(c);
+    });
+    inner.appendChild(gut);
+
+    var pane=document.createElement("div"); pane.className="lanepane";
+    var tpl="repeat("+cols+",minmax(0,1fr))";
+
+    /* верхняя полоса — такты */
+    var b1=document.createElement("div"); b1.className="band band1";
+    b1.style.gridTemplateColumns="repeat("+(all?BARS:1)+",minmax(0,1fr))";
+    for(var i=0;i<(all?BARS:1);i++){
+      var c1=document.createElement("div"); c1.className="c";
+      c1.textContent="Такт "+((all?i:view)+1);
+      b1.appendChild(c1);
+    }
+    pane.appendChild(b1);
+
+    /* нижняя полоса — доли и шестнадцатые */
+    var b2=document.createElement("div"); b2.className="band band2";
+    b2.style.gridTemplateColumns=tpl;
+    for(var s=0;s<cols;s++){
+      var abs=from+s, within=abs%SPB;
+      var c2=document.createElement("div");
+      c2.className="c"+(within%4===0?" beat":"")+(within===0?" bar":"");
+      if(all) c2.textContent = within%4===0 ? String(within/4+1) : "";
+      else c2.textContent = pos(abs);
+      b2.appendChild(c2);
+    }
+    pane.appendChild(b2);
+
+    /* сетка */
+    var lanes=document.createElement("div"); lanes.className="lanes";
+    lanes.style.gridTemplateColumns=tpl;
+    lanes.style.gridTemplateRows="repeat("+rows.length+",var(--rh))";
+    rows.forEach(function(r,i){
+      var l=document.createElement("div");
+      l.className="lane"+(r.blk?" blk":"");
+      l.style.gridRow=(i+1);
+      lanes.appendChild(l);
+    });
+    var gl=document.createElement("div"); gl.className="gridlines";
+    gl.style.backgroundImage=
+      "linear-gradient(to right,var(--rule) 0 1px,transparent 1px),"+
+      "linear-gradient(to right,var(--rule-2) 0 1px,transparent 1px),"+
+      "linear-gradient(to right,var(--rule-3) 0 1px,transparent 1px)";
+    gl.style.backgroundSize=
+      "calc(100%*"+SPB+"/"+cols+") 100%, calc(100%*4/"+cols+") 100%, calc(100%/"+cols+") 100%";
+    lanes.appendChild(gl);
+
+    noteIndex[t.id]={};
+    t.notes.forEach(function(n){
+      if(n.s<from || n.s>=from+cols) return;
+      var el=document.createElement("div");
+      el.className="note";
+      el.style.gridColumn=(n.s-from+1)+" / span "+n.l;
+      el.style.gridRow=((t.kind==="drum")?n.lane:(t.hi-n.m))+1;
+      if(t.kind!=="drum") el.textContent=nm(n.m);
+      lanes.appendChild(el);
+      (noteIndex[t.id][n.s]=noteIndex[t.id][n.s]||[]).push(el);
+    });
+
+    var ph=document.createElement("div"); ph.className="ph";
+    lanes.appendChild(ph); phEls.push(ph);
+    pane.appendChild(lanes);
+    inner.appendChild(pane);
+    box.appendChild(inner);
+
+    /* список нот под сеткой */
+    box.appendChild(noteList(t,from,cols,all));
+    sec.appendChild(box);
+    host.appendChild(sec);
+  });
+
+  var cl=document.getElementById("chordlabel");
+  cl.innerHTML = all
+    ? 'аккорды: <b>'+CHORDNAMES.join(" · ")+'</b>'
+    : 'аккорд такта: <b>'+CHORDNAMES[view]+'</b>';
 }
 
-TRACKS.forEach(function(t){
-  var rows=rowsOf(t);
-
-  var sec=document.createElement("div");
-  sec.className="roll";
-  sec.style.setProperty("--c",t.color);
-  if(t.kind==="drum") sec.style.setProperty("--rh","22px");
-
-  var head=document.createElement("div");
-  head.className="rollhead";
-  head.innerHTML=
-    '<div class="rollnum">'+t.num+'</div>'+
-    '<div><div class="rolltitle">'+t.title+'</div><div class="rollsub">'+t.sub+'</div></div>'+
-    '<div class="right"><button class="dlmini" type="button">MIDI дорожки</button></div>';
-  head.querySelector(".dlmini").addEventListener("click",function(){ downloadMidi([t], t.mid); });
-  sec.appendChild(head);
-
-  var box=document.createElement("div"); box.className="rollbox";
-  var inner=document.createElement("div"); inner.className="rollinner";
-
-  /* гуттер */
-  var gut=document.createElement("div"); gut.className="gutter";
-  var gh=document.createElement("div"); gh.className="ghead"; gh.textContent = t.kind==="drum" ? "Звук" : "Нота";
-  gut.appendChild(gh);
-  rows.forEach(function(r){
-    var c=document.createElement("div");
-    c.className="gcell"+(r.blk?" blk":"")+((r.label.indexOf("C")===0&&r.label.indexOf("C#")!==0)?" acc":"");
-    c.textContent=r.label;
-    gut.appendChild(c);
-  });
-  inner.appendChild(gut);
-
-  /* сетка */
-  var pane=document.createElement("div"); pane.className="lanepane";
-
-  var ruler=document.createElement("div"); ruler.className="ruler";
-  for(var s=0;s<STEPS;s++){
-    var tk=document.createElement("div");
-    tk.className="tick"+(s%16===0?" bar":(s%4===0?" beat":""));
-    if(s%16===0) tk.textContent="Такт "+(s/16+1);
-    else if(s%4===0) tk.textContent=String(s%16/4+1);
-    ruler.appendChild(tk);
+function noteList(t,from,cols,all){
+  var box=document.createElement("div"); box.className="notelist";
+  var head=document.createElement("div"); head.className="t";
+  head.textContent = all ? "Общий вид" : "Что вставить в такт "+(view+1);
+  box.appendChild(head);
+  if(all){
+    var hint=document.createElement("div");
+    hint.className="hintline";
+    hint.textContent="Открой один такт вверху — под сеткой появится список нот этого такта.";
+    box.appendChild(hint);
+    return box;
   }
-  pane.appendChild(ruler);
+  var list=document.createElement("div");
+  list.className="nl"+(t.kind==="drum"?" drums":"");
+  var inRange=t.notes.filter(function(n){ return n.s>=from && n.s<from+cols; });
 
-  var lanes=document.createElement("div"); lanes.className="lanes";
-  lanes.style.gridTemplateRows="repeat("+rows.length+",var(--rh))";
-  rows.forEach(function(r,i){
-    var l=document.createElement("div");
-    l.className="lane"+(r.blk?" blk":"");
-    l.style.gridRow=(i+1);
-    lanes.appendChild(l);
-  });
-  var gl=document.createElement("div"); gl.className="gridlines"; lanes.appendChild(gl);
-
-  noteEls[t.id]=[];
-  t.notes.forEach(function(n){
-    var el=document.createElement("div");
-    el.className="note";
-    el.style.gridColumn=(n.s+1)+" / span "+n.l;
-    el.style.gridRow=(rowIndex(t,rows,n)+1);
-    lanes.appendChild(el);
-    noteEls[t.id].push(el);
-  });
-
-  var ph=document.createElement("div"); ph.className="ph";
-  lanes.appendChild(ph); phEls.push(ph);
-
-  pane.appendChild(lanes);
-  inner.appendChild(pane);
-  box.appendChild(inner);
-
-  if(t.chords){
-    var cr=document.createElement("div"); cr.className="chordrow";
-    CHORDNAMES.forEach(function(c,i){
-      var d=document.createElement("div");
-      d.textContent="Такт "+(i+1)+" — "+c;
-      cr.appendChild(d);
+  if(t.kind==="drum"){
+    t.lanes.forEach(function(lane,i){
+      var hits=inRange.filter(function(n){ return n.lane===i; });
+      if(!hits.length) return;
+      var it=document.createElement("div"); it.className="item";
+      var seen={}, ps=[];
+      hits.forEach(function(n){
+        var p=(all?"Т"+(Math.floor(n.s/SPB)+1)+" ":"")+pos(n.s);
+        if(!seen[p]){ seen[p]=1; ps.push(p); }
+      });
+      it.innerHTML='<span class="k">'+lane+'</span><span class="p">'+ps.join("</span> <span class=\"p\">")+'</span>';
+      list.appendChild(it);
     });
-    box.appendChild(cr);
+  } else {
+    var groups={};
+    inRange.forEach(function(n){ (groups[n.s]=groups[n.s]||[]).push(n); });
+    Object.keys(groups).map(Number).sort(function(a,b){ return a-b; }).forEach(function(s){
+      var g=groups[s];
+      var names=g.map(function(n){ return nm(n.m); }).join(" + ");
+      var it=document.createElement("div"); it.className="item";
+      it.innerHTML=
+        '<span class="p">'+(all?"Т"+(Math.floor(s/SPB)+1)+" · ":"")+pos(s)+'</span> &nbsp;'+
+        '<span class="v">'+names+'</span> &nbsp;'+
+        '<span class="d">'+g[0].l+'/16</span>';
+      list.appendChild(it);
+    });
   }
+  box.appendChild(list);
+  return box;
+}
 
-  sec.appendChild(box);
-  host.appendChild(sec);
+var tabs=[].slice.call(document.querySelectorAll(".bartabs button"));
+tabs.forEach(function(b){
+  b.addEventListener("click",function(){
+    view=(b.dataset.bar==="all")?"all":+b.dataset.bar;
+    tabs.forEach(function(x){ x.setAttribute("aria-pressed",x===b?"true":"false"); });
+    render();
+  });
 });
+function setView(v){
+  if(view===v) return;
+  view=v;
+  tabs.forEach(function(x){ x.setAttribute("aria-pressed", (x.dataset.bar===String(v))?"true":"false"); });
+  render();
+}
+render();
 
-/* ============ ЗВУК ============ */
+/* ================= ЗВУК ================= */
 var ctx=null,master=null,nbuf=null,drive=null;
 function mtof(m){ return 440*Math.pow(2,(m-69)/12); }
 function curveFn(k){ var n=1024,c=new Float32Array(n),i,x;
   for(i=0;i<n;i++){ x=i*2/n-1; c[i]=(1+k)*x/(1+k*Math.abs(x)); } return c; }
-
 function initAudio(){
   if(ctx) return;
   var AC=window.AudioContext||window.webkitAudioContext;
@@ -699,22 +715,17 @@ function playDrum(lane,t){
   else noise(t,"highpass",3200,0.09,0.035);
 }
 
-/* ============ ПЛАНИРОВЩИК ============ */
+/* ================= ПЛАНИРОВЩИК ================= */
 var byStep={};
 TRACKS.forEach(function(t){
-  t.notes.forEach(function(n,i){
-    (byStep[n.s]=byStep[n.s]||[]).push({t:t,n:n,el:noteEls[t.id][i]});
-  });
+  t.notes.forEach(function(n){ (byStep[n.s]=byStep[n.s]||[]).push({t:t,n:n}); });
 });
-
 var bpm=130,playing=false,step=0,nextT=0,timer=null,queue=[];
 function stepDur(){ return 60/bpm/4; }
-
 function schedule(s,t){
   var list=byStep[s]; if(!list) return;
-  var dur;
   list.forEach(function(e){
-    dur=e.n.l*stepDur();
+    var dur=e.n.l*stepDur();
     if(e.t.id==="kick") sKick(t);
     else if(e.t.id==="bass") s808(t,e.n.m,dur*0.95);
     else if(e.t.id==="chord") sPad(t,e.n.m,dur);
@@ -725,35 +736,42 @@ function schedule(s,t){
   queue.push({s:s,time:t});
 }
 function tick(){
-  while(nextT < ctx.currentTime+0.12){
+  while(nextT<ctx.currentTime+0.12){
     schedule(step,nextT);
     nextT+=stepDur();
     step=(step+1)%STEPS;
   }
 }
 var lastS=-1;
-var posbar=document.getElementById("posbar"), posbeat=document.getElementById("posbeat");
+var posbar=document.getElementById("posbar"),posbeat=document.getElementById("posbeat");
 function draw(){
   if(!playing) return;
   var now=ctx.currentTime,cur=null;
   while(queue.length && queue[0].time<=now) cur=queue.shift();
   if(cur && cur.s!==lastS){
     lastS=cur.s;
-    var pct=(cur.s/STEPS)*100;
-    phEls.forEach(function(p){ p.style.left=pct+"%"; });
-    var curBar=Math.floor(cur.s/16);
-    posbar.textContent=String(curBar+1);
-    posbeat.textContent=String(Math.floor((cur.s%16)/4)+1);
-    if(cur.s%16===0) gotoBar(curBar);
-    var list=byStep[cur.s];
-    if(list) list.forEach(function(e){
-      e.el.classList.add("hit");
-      setTimeout(function(){ e.el.classList.remove("hit"); },110);
+    var bar=Math.floor(cur.s/SPB);
+    posbar.textContent=String(bar+1);
+    posbeat.textContent=String(Math.floor((cur.s%SPB)/4)+1);
+    if(view!=="all" && cur.s%SPB===0) setView(bar);
+    var all=(view==="all"), from=all?0:view*SPB, cols=all?STEPS:SPB;
+    if(cur.s>=from && cur.s<from+cols){
+      var pct=((cur.s-from)/cols)*100;
+      phEls.forEach(function(p){ p.classList.add("on"); p.style.left=pct+"%"; });
+    } else {
+      phEls.forEach(function(p){ p.classList.remove("on"); });
+    }
+    TRACKS.forEach(function(t){
+      var els=noteIndex[t.id] && noteIndex[t.id][cur.s];
+      if(!els) return;
+      els.forEach(function(el){
+        el.classList.add("hit");
+        setTimeout(function(){ el.classList.remove("hit"); },110);
+      });
     });
   }
   requestAnimationFrame(draw);
 }
-
 var playBtn=document.getElementById("play"),pg=document.getElementById("pg"),pt=document.getElementById("pt");
 function start(){
   initAudio();
@@ -762,7 +780,6 @@ function start(){
   nextT=ctx.currentTime+0.06;
   timer=setInterval(tick,25);
   requestAnimationFrame(draw);
-  phEls.forEach(function(p){ p.classList.add("on"); });
   pg.textContent="■"; pt.textContent="Стоп";
 }
 function stop(){
@@ -782,43 +799,13 @@ document.getElementById("vol").addEventListener("input",function(e){
   initAudio(); master.gain.value=(+e.target.value)/100;
 });
 
-/* ============ СИНХРОННЫЙ СКРОЛЛ И ПЕРЕХОД ПО ТАКТАМ ============ */
-var boxes=[].slice.call(document.querySelectorAll(".rollbox"));
-var syncing=false;
-boxes.forEach(function(bx){
-  bx.addEventListener("scroll",function(){
-    if(syncing) return;
-    syncing=true;
-    boxes.forEach(function(o){ if(o!==bx) o.scrollLeft=bx.scrollLeft; });
-    requestAnimationFrame(function(){ syncing=false; });
-  });
-});
-var jumpBtns=[].slice.call(document.querySelectorAll(".jump button[data-bar]"));
-function gotoBar(i){
-  boxes.forEach(function(bx){
-    var pane=bx.querySelector(".lanepane");
-    bx.scrollLeft=Math.round(pane.offsetWidth*i/BARS);
-  });
-  jumpBtns.forEach(function(b){ b.setAttribute("aria-pressed", (+b.dataset.bar===i)?"true":"false"); });
-}
-jumpBtns.forEach(function(b){ b.addEventListener("click",function(){ gotoBar(+b.dataset.bar); }); });
-var zoomBtn=document.getElementById("zoom");
-zoomBtn.addEventListener("click",function(){
-  var z=document.body.classList.toggle("zoom");
-  zoomBtn.textContent=z?"Мельче":"Крупнее";
-  var active=jumpBtns.filter(function(b){ return b.getAttribute("aria-pressed")==="true"; })[0];
-  gotoBar(active?+active.dataset.bar:0);
-});
-
-/* ============ ЭКСПОРТ MIDI ============ */
-var TPQ=96, TPS=TPQ/4;
+/* ================= ЭКСПОРТ MIDI ================= */
+var TPQ=96,TPS=TPQ/4;
 function vlq(n){ var b=[n&0x7f]; n>>=7; while(n>0){ b.unshift((n&0x7f)|0x80); n>>=7; } return b; }
 function ascii(s){ var a=[],i; for(i=0;i<s.length;i++) a.push(s.charCodeAt(i)&0x7f); return a; }
 function u32(n){ return [(n>>>24)&255,(n>>>16)&255,(n>>>8)&255,n&255]; }
 function u16(n){ return [(n>>>8)&255,n&255]; }
-
 function chunk(id,data){ return ascii(id).concat(u32(data.length)).concat(data); }
-
 function tempoTrack(){
   var us=Math.round(60000000/bpm),out=[];
   out=out.concat(vlq(0),[0xFF,0x03],[9],ascii("Phonk 130"));
@@ -831,9 +818,8 @@ function noteTrack(t){
   var evs=[],out=[],last=0;
   evs.push({t:0,o:-1,d:[0xFF,0x03].concat([t.mid.length],ascii(t.mid))});
   t.notes.forEach(function(n){
-    var m=(t.kind==="drum")?n.m:n.m;
-    evs.push({t:n.s*TPS,        o:1, d:[0x90|t.ch,m,t.ch===9?112:96]});
-    evs.push({t:(n.s+n.l)*TPS,  o:0, d:[0x80|t.ch,m,0]});
+    evs.push({t:n.s*TPS,       o:1,d:[0x90|t.ch,n.m,t.ch===9?112:96]});
+    evs.push({t:(n.s+n.l)*TPS, o:0,d:[0x80|t.ch,n.m,0]});
   });
   evs.sort(function(a,b){ return (a.t-b.t)||(a.o-b.o); });
   evs.forEach(function(e){ out=out.concat(vlq(e.t-last),e.d); last=e.t; });
@@ -854,7 +840,6 @@ function downloadMidi(list,label){
 }
 document.getElementById("dlall").addEventListener("click",function(){ downloadMidi(TRACKS,"full"); });
 
-/* ============ ТЕМА ============ */
 document.getElementById("themebtn").addEventListener("click",function(){
   var cur=document.documentElement.getAttribute("data-theme");
   if(!cur) cur=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
