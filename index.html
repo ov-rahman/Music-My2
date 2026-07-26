@@ -64,6 +64,8 @@ p{margin:0}
 .btn{font-family:var(--f-disp);font-weight:900;text-transform:uppercase;letter-spacing:.03em;font-size:13.5px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:2px;padding:10px 17px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
 .btn:hover{opacity:.85}
 .btn--hot{background:var(--hot);border-color:var(--hot);color:#fff}
+.btn--ghost{background:transparent;border-color:var(--rule);color:var(--ink-2)}
+.btn--ghost:hover{border-color:var(--ink);color:var(--ink);opacity:1}
 .btn .g{font-family:var(--f-mono);font-size:12px}
 .ctl{display:flex;align-items:center;gap:8px}
 .ctl label{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
@@ -212,9 +214,9 @@ footer{padding:30px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-siz
     <div class="eyebrow">Brazilian phonk / mega funk · GarageBand</div>
     <h1>Такт за тактом</h1>
     <p class="lede">
-      Выбираешь такт — видишь ровно те ноты, которые в нём стоят: и на сетке, и списком
-      под ней. Открываешь пиано-ролл в GarageBand и повторяешь. Или качаешь MIDI
-      и перетаскиваешь готовое.
+      Скачай MIDI и открой в GarageBand — все шесть дорожек встанут со своими нотами,
+      дальше правь что хочешь. Работает и на Mac, и на iPhone. А если хочешь собрать
+      руками, выбирай такт: увидишь ровно те ноты, которые в нём стоят, и на сетке, и списком.
     </p>
     <div class="specs">
       <div class="spec"><span>Темп</span><b>130 BPM</b></div>
@@ -229,7 +231,8 @@ footer{padding:30px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-siz
 <div class="transport">
   <div class="wrap">
     <button class="btn" id="play" type="button"><span class="g" id="pg">▶</span><span id="pt">Играть</span></button>
-    <button class="btn btn--hot" id="dlall" type="button"><span class="g">↓</span>Скачать MIDI</button>
+    <button class="btn btn--hot" id="dlall" type="button"><span class="g">↓</span><span>Скачать MIDI</span></button>
+    <button class="btn btn--ghost" id="dlwav" type="button"><span class="g">↓</span><span>Скачать WAV</span></button>
     <div class="ctl">
       <label for="bpm">BPM</label>
       <input type="range" id="bpm" min="110" max="160" step="1" value="130">
@@ -293,14 +296,26 @@ footer{padding:30px 0 60px;color:var(--ink-3);font-family:var(--f-mono);font-siz
   <div class="wrap">
     <div class="sechead">
       <h2>Как вставить</h2>
-      <p>Через MIDI быстрее, но он работает только на Mac.</p>
+      <p>Файл MIDI открывается и на Mac, и на iPhone — дальше ноты можно двигать и переписывать как свои.</p>
     </div>
     <ol class="steps">
       <li><span><b>Заведи проект:</b> темп <code>130</code>, тональность <code>A minor</code>, размер <code>4/4</code>. Сетку поставь на <code>1/16</code>, метроном включи.</span></li>
-      <li><span><b>Mac:</b> жми «Скачать MIDI» и перетащи файл прямо в окно GarageBand — все шесть дорожек встанут со всеми нотами.</span></li>
-      <li><span><b>iPhone или iPad:</b> GarageBand на iOS не умеет импортировать MIDI. Открывай пиано-ролл и ставь ноты по списку под каждой сеткой: первая цифра — доля, вторая — шестнадцатая внутри доли.</span></li>
+      <li><span><b>Скачай MIDI</b> кнопкой вверху. В файле шесть дорожек с именами Kick, 808 Bass, Chords, Lead, Pluck, Perc.</span></li>
+      <li><span><b>Mac:</b> перетащи файл прямо в окно GarageBand — все шесть дорожек встанут со всеми нотами.</span></li>
+      <li><span><b>iPhone или iPad:</b> сохрани файл в «Файлы». В GarageBand открой вид дорожек, нажми кнопку петель <b>(Loop Browser)</b> в панели управления, вкладка <b>«Файлы»</b> → «Обзор объектов из приложения Файлы» → выбери свой <code>.mid</code>. Затем перетащи его на линейку к нужному такту.</span></li>
+      <li><span><b>Назначь звуки.</b> При импорте GarageBand делает все дорожки клавишными. Открой Kick и Perc и смени инструмент на набор барабанов — ноты уже лежат по стандарту GM, они попадут на нужные пэды. Остальным поставь инструменты из таблицы выше.</span></li>
       <li><span><b>Дальше копируй петлю.</b> Полный трек: интро 8 тактов только лид, разгон 8 тактов с киком и хэтами, дроп 16 тактов всё вместе, брейк 8 тактов без барабанов, второй дроп 16 тактов, аутро 8 тактов на убывание.</span></li>
     </ol>
+    <div class="note-box" style="border-left-color:var(--deep)">
+      <b>Кнопка «Скачать WAV»</b> даёт готовую петлю на 4 такта одним аудиофайлом — она нужна,
+      чтобы сравнить свой результат с оригиналом или бросить подложку в проект.
+      Ноты в ней уже не редактируются, для сборки трека бери MIDI.
+    </div>
+    <div class="note-box">
+      <b>Две мелочи про импорт на iPhone.</b> Многодорожечный MIDI нельзя положить
+      в ячейку Live Loops — только на обычную линейку. И общее число дорожек в проекте
+      не может превысить 32.
+    </div>
     <div class="note-box">
       <b>Главное про этот жанр.</b> Кик стоит не по четвертям, а группами 3-3-4-3-3 —
       позиции 1.1, 1.4, 2.3, 3.3, 4.2 в каждом такте. Именно эта сбивка делает бит
@@ -607,112 +622,135 @@ function setView(v){
 render();
 
 /* ================= ЗВУК ================= */
-var ctx=null,master=null,nbuf=null,drive=null;
+var ctx=null,master=null,V=null;
 function mtof(m){ return 440*Math.pow(2,(m-69)/12); }
 function curveFn(k){ var n=1024,c=new Float32Array(n),i,x;
   for(i=0;i<n;i++){ x=i*2/n-1; c[i]=(1+k)*x/(1+k*Math.abs(x)); } return c; }
+function noiseBuf(ac){
+  var len=Math.floor(ac.sampleRate*0.8);
+  var b=ac.createBuffer(1,len,ac.sampleRate),d=b.getChannelData(0);
+  for(var i=0;i<len;i++) d[i]=Math.random()*2-1;
+  return b;
+}
+
+/* один и тот же набор голосов используется и вживую, и при рендере в WAV */
+function makeVoices(ac,dest){
+  var nbuf=noiseBuf(ac), drive=curveFn(16);
+  function env(g,t,peak,dec){
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(Math.max(peak,0.0005),t+0.004);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dec);
+  }
+  function noise(t,type,freq,peak,dec,q){
+    var n=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();
+    n.buffer=nbuf; f.type=type; f.frequency.value=freq; if(q) f.Q.value=q;
+    env(g,t,peak,dec);
+    n.connect(f); f.connect(g); g.connect(dest);
+    n.start(t); n.stop(t+dec+0.05);
+  }
+  function kick(t){
+    var o=ac.createOscillator(),g=ac.createGain();
+    o.type="sine";
+    o.frequency.setValueAtTime(175,t);
+    o.frequency.exponentialRampToValueAtTime(44,t+0.09);
+    env(g,t,0.95,0.32);
+    o.connect(g); g.connect(dest); o.start(t); o.stop(t+0.34);
+    noise(t,"highpass",2400,0.13,0.02);
+  }
+  function bass(t,m,dur){
+    var o=ac.createOscillator(),g=ac.createGain(),ws=ac.createWaveShaper(),lp=ac.createBiquadFilter();
+    var f=mtof(m);
+    o.type="sine";
+    o.frequency.setValueAtTime(f*2.2,t);
+    o.frequency.exponentialRampToValueAtTime(f,t+0.05);
+    ws.curve=drive; ws.oversample="2x";
+    lp.type="lowpass"; lp.frequency.value=780;
+    env(g,t,0.6,dur);
+    o.connect(g); g.connect(ws); ws.connect(lp); lp.connect(dest);
+    o.start(t); o.stop(t+dur+0.05);
+  }
+  function pad(t,m,dur){
+    var g=ac.createGain(),lp=ac.createBiquadFilter();
+    lp.type="lowpass";
+    lp.frequency.setValueAtTime(2600,t);
+    lp.frequency.exponentialRampToValueAtTime(900,t+dur);
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(0.075,t+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur+0.15);
+    [-7,0,7].forEach(function(dt){
+      var o=ac.createOscillator();
+      o.type="sawtooth"; o.frequency.value=mtof(m); o.detune.value=dt;
+      o.connect(g); o.start(t); o.stop(t+dur+0.2);
+    });
+    g.connect(lp); lp.connect(dest);
+  }
+  function lead(t,m,dur){
+    var o=ac.createOscillator(),o2=ac.createOscillator(),g=ac.createGain(),lp=ac.createBiquadFilter();
+    o.type="sawtooth"; o2.type="square";
+    o.frequency.value=mtof(m); o2.frequency.value=mtof(m-12); o2.detune.value=6;
+    lp.type="lowpass"; lp.frequency.value=3000; lp.Q.value=2;
+    env(g,t,0.16,dur+0.08);
+    o.connect(g); o2.connect(g); g.connect(lp); lp.connect(dest);
+    o.start(t); o.stop(t+dur+0.15); o2.start(t); o2.stop(t+dur+0.15);
+  }
+  function pluck(t,m){
+    var o=ac.createOscillator(),g=ac.createGain(),bp=ac.createBiquadFilter();
+    o.type="triangle"; o.frequency.value=mtof(m);
+    bp.type="highpass"; bp.frequency.value=600;
+    env(g,t,0.15,0.19);
+    o.connect(g); g.connect(bp); bp.connect(dest);
+    o.start(t); o.stop(t+0.24);
+  }
+  function cowbell(t){
+    var g=ac.createGain(),bp=ac.createBiquadFilter();
+    bp.type="bandpass"; bp.frequency.value=2400; bp.Q.value=1.4;
+    env(g,t,0.14,0.13);
+    [540,800].forEach(function(f){
+      var o=ac.createOscillator(); o.type="square"; o.frequency.value=f;
+      o.connect(g); o.start(t); o.stop(t+0.18);
+    });
+    g.connect(bp); bp.connect(dest);
+  }
+  function snare(t){
+    noise(t,"bandpass",1850,0.42,0.15,0.8);
+    var o=ac.createOscillator(),g=ac.createGain();
+    o.type="triangle"; o.frequency.setValueAtTime(200,t);
+    env(g,t,0.16,0.07);
+    o.connect(g); g.connect(dest); o.start(t); o.stop(t+0.1);
+  }
+  function drum(lane,t){
+    if(lane===0) noise(t,"highpass",7000,0.10,0.22);
+    else if(lane===1) noise(t,"highpass",8200,0.085,0.03);
+    else if(lane===2) cowbell(t);
+    else if(lane===3) snare(t);
+    else noise(t,"highpass",3200,0.09,0.035);
+  }
+  return {kick:kick,bass:bass,pad:pad,lead:lead,pluck:pluck,drum:drum};
+}
+
+function busInto(ac){
+  var g=ac.createGain(); g.gain.value=0.75;
+  var lim=ac.createDynamicsCompressor();
+  lim.threshold.value=-6; lim.ratio.value=12; lim.attack.value=0.003; lim.release.value=0.15;
+  g.connect(lim); lim.connect(ac.destination);
+  return g;
+}
 function initAudio(){
   if(ctx) return;
   var AC=window.AudioContext||window.webkitAudioContext;
   ctx=new AC();
-  master=ctx.createGain(); master.gain.value=0.75;
-  var lim=ctx.createDynamicsCompressor();
-  lim.threshold.value=-6; lim.ratio.value=12; lim.attack.value=0.003; lim.release.value=0.15;
-  master.connect(lim); lim.connect(ctx.destination);
-  var len=Math.floor(ctx.sampleRate*0.8);
-  nbuf=ctx.createBuffer(1,len,ctx.sampleRate);
-  var d=nbuf.getChannelData(0);
-  for(var i=0;i<len;i++) d[i]=Math.random()*2-1;
-  drive=curveFn(16);
+  master=busInto(ctx);
+  V=makeVoices(ctx,master);
 }
-function env(g,t,peak,dec){
-  g.gain.setValueAtTime(0.0001,t);
-  g.gain.exponentialRampToValueAtTime(Math.max(peak,0.0005),t+0.004);
-  g.gain.exponentialRampToValueAtTime(0.0001,t+dec);
-}
-function noise(t,type,freq,peak,dec,q){
-  var n=ctx.createBufferSource(),f=ctx.createBiquadFilter(),g=ctx.createGain();
-  n.buffer=nbuf; f.type=type; f.frequency.value=freq; if(q) f.Q.value=q;
-  env(g,t,peak,dec);
-  n.connect(f); f.connect(g); g.connect(master);
-  n.start(t); n.stop(t+dec+0.05);
-}
-function sKick(t){
-  var o=ctx.createOscillator(),g=ctx.createGain();
-  o.type="sine";
-  o.frequency.setValueAtTime(175,t);
-  o.frequency.exponentialRampToValueAtTime(44,t+0.09);
-  env(g,t,0.95,0.32);
-  o.connect(g); g.connect(master); o.start(t); o.stop(t+0.34);
-  noise(t,"highpass",2400,0.13,0.02);
-}
-function s808(t,m,dur){
-  var o=ctx.createOscillator(),g=ctx.createGain(),ws=ctx.createWaveShaper(),lp=ctx.createBiquadFilter();
-  var f=mtof(m);
-  o.type="sine";
-  o.frequency.setValueAtTime(f*2.2,t);
-  o.frequency.exponentialRampToValueAtTime(f,t+0.05);
-  ws.curve=drive; ws.oversample="2x";
-  lp.type="lowpass"; lp.frequency.value=780;
-  env(g,t,0.6,dur);
-  o.connect(g); g.connect(ws); ws.connect(lp); lp.connect(master);
-  o.start(t); o.stop(t+dur+0.05);
-}
-function sPad(t,m,dur){
-  var g=ctx.createGain(),lp=ctx.createBiquadFilter();
-  lp.type="lowpass";
-  lp.frequency.setValueAtTime(2600,t);
-  lp.frequency.exponentialRampToValueAtTime(900,t+dur);
-  g.gain.setValueAtTime(0.0001,t);
-  g.gain.exponentialRampToValueAtTime(0.075,t+0.02);
-  g.gain.exponentialRampToValueAtTime(0.0001,t+dur+0.15);
-  [-7,0,7].forEach(function(dt){
-    var o=ctx.createOscillator();
-    o.type="sawtooth"; o.frequency.value=mtof(m); o.detune.value=dt;
-    o.connect(g); o.start(t); o.stop(t+dur+0.2);
-  });
-  g.connect(lp); lp.connect(master);
-}
-function sLead(t,m,dur){
-  var o=ctx.createOscillator(),o2=ctx.createOscillator(),g=ctx.createGain(),lp=ctx.createBiquadFilter();
-  o.type="sawtooth"; o2.type="square";
-  o.frequency.value=mtof(m); o2.frequency.value=mtof(m-12); o2.detune.value=6;
-  lp.type="lowpass"; lp.frequency.value=3000; lp.Q.value=2;
-  env(g,t,0.16,dur+0.08);
-  o.connect(g); o2.connect(g); g.connect(lp); lp.connect(master);
-  o.start(t); o.stop(t+dur+0.15); o2.start(t); o2.stop(t+dur+0.15);
-}
-function sPluck(t,m){
-  var o=ctx.createOscillator(),g=ctx.createGain(),bp=ctx.createBiquadFilter();
-  o.type="triangle"; o.frequency.value=mtof(m);
-  bp.type="highpass"; bp.frequency.value=600;
-  env(g,t,0.15,0.19);
-  o.connect(g); g.connect(bp); bp.connect(master);
-  o.start(t); o.stop(t+0.24);
-}
-function sCowbell(t){
-  var g=ctx.createGain(),bp=ctx.createBiquadFilter();
-  bp.type="bandpass"; bp.frequency.value=2400; bp.Q.value=1.4;
-  env(g,t,0.14,0.13);
-  [540,800].forEach(function(f){
-    var o=ctx.createOscillator(); o.type="square"; o.frequency.value=f;
-    o.connect(g); o.start(t); o.stop(t+0.18);
-  });
-  g.connect(bp); bp.connect(master);
-}
-function sSnare(t){
-  noise(t,"bandpass",1850,0.42,0.15,0.8);
-  var o=ctx.createOscillator(),g=ctx.createGain();
-  o.type="triangle"; o.frequency.setValueAtTime(200,t);
-  env(g,t,0.16,0.07);
-  o.connect(g); g.connect(master); o.start(t); o.stop(t+0.1);
-}
-function playDrum(lane,t){
-  if(lane===0) noise(t,"highpass",7000,0.10,0.22);
-  else if(lane===1) noise(t,"highpass",8200,0.085,0.03);
-  else if(lane===2) sCowbell(t);
-  else if(lane===3) sSnare(t);
-  else noise(t,"highpass",3200,0.09,0.035);
+
+/* одна нота -> голос; используется и планировщиком, и рендером */
+function fire(voices,e,t,dur){
+  if(e.t.id==="kick") voices.kick(t);
+  else if(e.t.id==="bass") voices.bass(t,e.n.m,dur*0.95);
+  else if(e.t.id==="chord") voices.pad(t,e.n.m,dur);
+  else if(e.t.id==="lead") voices.lead(t,e.n.m,dur*0.9);
+  else if(e.t.id==="pluck") voices.pluck(t,e.n.m);
+  else voices.drum(e.n.lane,t);
 }
 
 /* ================= ПЛАНИРОВЩИК ================= */
@@ -723,16 +761,8 @@ TRACKS.forEach(function(t){
 var bpm=130,playing=false,step=0,nextT=0,timer=null,queue=[];
 function stepDur(){ return 60/bpm/4; }
 function schedule(s,t){
-  var list=byStep[s]; if(!list) return;
-  list.forEach(function(e){
-    var dur=e.n.l*stepDur();
-    if(e.t.id==="kick") sKick(t);
-    else if(e.t.id==="bass") s808(t,e.n.m,dur*0.95);
-    else if(e.t.id==="chord") sPad(t,e.n.m,dur);
-    else if(e.t.id==="lead") sLead(t,e.n.m,dur*0.9);
-    else if(e.t.id==="pluck") sPluck(t,e.n.m);
-    else playDrum(e.n.lane,t);
-  });
+  var list=byStep[s];
+  if(list) list.forEach(function(e){ fire(V,e,t,e.n.l*stepDur()); });
   queue.push({s:s,time:t});
 }
 function tick(){
@@ -839,6 +869,56 @@ function downloadMidi(list,label){
   setTimeout(function(){ URL.revokeObjectURL(url); },1000);
 }
 document.getElementById("dlall").addEventListener("click",function(){ downloadMidi(TRACKS,"full"); });
+
+/* ================= ЭКСПОРТ WAV ================= */
+function encodeWav(buf){
+  var nch=buf.numberOfChannels,len=buf.length,sr=buf.sampleRate;
+  var total=44+len*nch*2, ab=new ArrayBuffer(total), dv=new DataView(ab), i, c;
+  function str(off,s){ for(var k=0;k<s.length;k++) dv.setUint8(off+k,s.charCodeAt(k)); }
+  str(0,"RIFF");  dv.setUint32(4,total-8,true);   str(8,"WAVE");
+  str(12,"fmt "); dv.setUint32(16,16,true);       dv.setUint16(20,1,true);
+  dv.setUint16(22,nch,true);   dv.setUint32(24,sr,true);
+  dv.setUint32(28,sr*nch*2,true); dv.setUint16(32,nch*2,true); dv.setUint16(34,16,true);
+  str(36,"data"); dv.setUint32(40,len*nch*2,true);
+  var chans=[];
+  for(c=0;c<nch;c++) chans.push(buf.getChannelData(c));
+  /* приводим пик к −1 dBFS, иначе сумма голосов уходит в клиппинг */
+  var peak=0,a;
+  for(c=0;c<nch;c++) for(i=0;i<len;i++){ a=Math.abs(chans[c][i]); if(a>peak) peak=a; }
+  var gain=(peak>0.0001)?Math.min(1/peak*0.89,4):1;
+  var off=44,s;
+  for(i=0;i<len;i++) for(c=0;c<nch;c++){
+    s=Math.max(-1,Math.min(1,chans[c][i]*gain));
+    dv.setInt16(off,s<0?s*0x8000:s*0x7FFF,true);
+    off+=2;
+  }
+  return new Blob([ab],{type:"audio/wav"});
+}
+function saveBlob(blob,name){
+  var url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url; a.download=name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(url); },1000);
+}
+var wavBtn=document.getElementById("dlwav");
+wavBtn.addEventListener("click",function(){
+  var OAC=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+  if(!OAC){ wavBtn.textContent="WAV не поддерживается"; return; }
+  var sd=60/bpm/4, sr=44100;
+  var frames=Math.round(STEPS*sd*sr);          /* ровно 4 такта — петля сойдётся встык */
+  var oac=new OAC(2,frames,sr);
+  var bus=busInto(oac), voices=makeVoices(oac,bus);
+  Object.keys(byStep).forEach(function(k){
+    var s=+k;
+    byStep[s].forEach(function(e){ fire(voices,e,s*sd,e.n.l*sd); });
+  });
+  var label=wavBtn.querySelector("span:last-child");
+  label.textContent="Рендер…";
+  oac.startRendering().then(function(buf){
+    saveBlob(encodeWav(buf),"phonk-"+bpm+"-loop-4-takta.wav");
+    label.textContent="Скачать WAV";
+  }).catch(function(){ label.textContent="Ошибка рендера"; });
+});
 
 document.getElementById("themebtn").addEventListener("click",function(){
   var cur=document.documentElement.getAttribute("data-theme");
